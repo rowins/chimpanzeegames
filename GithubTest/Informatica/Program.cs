@@ -8,7 +8,7 @@ namespace Informatica
         {
             Console.WriteLine("Hello World!");
             //yhfdrf
-            Console.WriteLine("test");
+            Console.WriteLine("test2");
         }
     }
 }
