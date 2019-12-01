@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2019-12-01T11:06:51.143+01:00
+  initializedAtString: 2019-11-30T10:47:13.938+01:00
+  log:
+  - commitID: 24be4b4eb525be4ccfff1b6f2be5d0c6c1220241
+    mergeA: 
+    mergeB: 
+    authorName: Rowin R. Schouten
+    authorEmail: 607953-L0119@slim365.nl
+    commitEmail: 607953-L0119@slim365.nl
+    commitName: Rowin R. Schouten
+    summary: Dit is zonder conflict
+    description: Hopen we allemaal ten zeerste
+    timeString: 2019-11-20T11:28:36.000+01:00
+    commitTimeString: 2019-11-20T11:28:36.000+01:00
+    changes:
+    - path: GithubTest\Informatica\Program.cs
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Program.cs
+      projectPath: ..\GithubTest\Informatica\Program.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 7def83f5ca282d1adf7b3dd5e3b7dc3cee901dde
+    mergeA: a6639eba36594bd8fba8689ce1eadf888b605151
+    mergeB: 6614b3b27512ce66a01ed3bb5e33a31d3fb6bae2
+    authorName: Rowin R. Schouten
+    authorEmail: 607953-L0119@slim365.nl
+    commitEmail: 607953-L0119@slim365.nl
+    commitName: Rowin R. Schouten
+    summary: Merge branch 'master' of https://github.com/rowins/test
+    description: "# Conflicts:\r\n#\tGithubTest/Informatica/Program.cs"
+    timeString: 2019-11-20T11:27:56.000+01:00
+    commitTimeString: 2019-11-20T11:27:56.000+01:00
+    changes: []
+  - commitID: a6639eba36594bd8fba8689ce1eadf888b605151
+    mergeA: 
+    mergeB: 
+    authorName: Schouten
+    authorEmail: 607953-l0119@slim365.nl
+    commitEmail: 607953-l0119@slim365.nl
+    commitName: Schouten
+    summary: Komt er nu een conflict?
+    description: Hoop het wel.
+    timeString: 2019-11-20T11:24:46.000+01:00
+    commitTimeString: 2019-11-20T11:24:46.000+01:00
+    changes:
+    - path: GithubTest\Informatica\Program.cs
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Program.cs
+      projectPath: ..\GithubTest\Informatica\Program.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 6614b3b27512ce66a01ed3bb5e33a31d3fb6bae2
+    mergeA: 
+    mergeB: 
+    authorName: Jarno Hendriksen
+    authorEmail: jarno.hendriksen@outlook.com
+    commitEmail: jarno.hendriksen@outlook.com
+    commitName: Jarno Hendriksen
+    summary: dwfdwfdfs
+    description: sdfsdf
+    timeString: 2019-11-20T11:23:35.000+01:00
+    commitTimeString: 2019-11-20T11:23:35.000+01:00
+    changes:
+    - path: GithubTest\Informatica\Program.cs
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Program.cs
+      projectPath: ..\GithubTest\Informatica\Program.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 9120837208bcc068072b57ddacd02b43cd3710a8
+    mergeA: 
+    mergeB: 
+    authorName: Schouten
+    authorEmail: 607953-l0119@slim365.nl
+    commitEmail: 607953-l0119@slim365.nl
+    commitName: Schouten
+    summary: Test1 is test2 geworden
+    description: Dit is mooi.
+    timeString: 2019-11-20T11:15:59.000+01:00
+    commitTimeString: 2019-11-20T11:15:59.000+01:00
+    changes:
+    - path: Github workshop.gdoc
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\Github
+        workshop.gdoc
+      projectPath: ..\Github workshop.gdoc
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: GithubTest\Informatica\Program.cs
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Program.cs
+      projectPath: ..\GithubTest\Informatica\Program.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 19549c19a68648ca7091be9c2ea842318e7e9e02
+    mergeA: 
+    mergeB: 
+    authorName: Schouten
+    authorEmail: 607953-l0119@slim365.nl
+    commitEmail: 607953-l0119@slim365.nl
+    commitName: Schouten
+    summary: Dit is de eerste commit.
+    description: Dit is goed.
+    timeString: 2019-11-20T11:13:59.000+01:00
+    commitTimeString: 2019-11-20T11:13:59.000+01:00
+    changes:
+    - path: .gitignore
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: GithubTest\Informatica.sln
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica.sln
+      projectPath: ..\GithubTest\Informatica.sln
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: GithubTest\Informatica\Informatica.csproj
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Informatica.csproj
+      projectPath: ..\GithubTest\Informatica\Informatica.csproj
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: GithubTest\Informatica\Program.cs
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\Informatica\Program.cs
+      projectPath: ..\GithubTest\Informatica\Program.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: GithubTest\VisualStudio.gitignore
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\GithubTest\VisualStudio.gitignore
+      projectPath: ..\GithubTest\VisualStudio.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 8281c3703b5f385f9e18ee5aa3807d8cc8bb4f27
+    mergeA: 
+    mergeB: 
+    authorName: rowins
+    authorEmail: boyrowin@gmail.com
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Add files via upload
+    description: 
+    timeString: 2019-11-20T10:55:45.000+01:00
+    commitTimeString: 2019-11-20T10:55:45.000+01:00
+    changes:
+    - path: Informatica.sln
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\Informatica.sln
+      projectPath: ..\Informatica.sln
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 00b584a57c86c196288c59dbee2ca944960f8823
+    mergeA: 
+    mergeB: 
+    authorName: rowins
+    authorEmail: boyrowin@gmail.com
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Update README.md
+    description: 
+    timeString: 2019-11-20T10:42:10.000+01:00
+    commitTimeString: 2019-11-20T10:42:10.000+01:00
+    changes:
+    - path: README.md
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: e1d61179f6e0bc34b09a375afc3b43b799dc6734
+    mergeA: 
+    mergeB: 
+    authorName: rowins
+    authorEmail: boyrowin@gmail.com
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Create README.md
+    description: 
+    timeString: 2019-11-20T10:40:30.000+01:00
+    commitTimeString: 2019-11-20T10:40:30.000+01:00
+    changes:
+    - path: README.md
+      fullPath: D:\Google Drive\School\Blok 2\Gametechnology introductieproject\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0

@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RoadTool\Editor\RoadTool.cs" />
+    <Compile Include="Assets\Models\Road\RoadTool\Editor\RoadTool.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -287,21 +287,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Api.45">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Unity.45">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
-    </Reference>
-    <Reference Include="sfw.net">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.UnityShim">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Logging">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -665,10 +650,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{99F4CE74-5AC2-2F42-1729-7A8012A01CC2}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{E089AA62-1508-ADCB-F33E-EE9C30A53228}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

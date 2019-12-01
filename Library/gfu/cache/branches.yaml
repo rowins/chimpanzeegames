@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1666186674, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 2
+  lastUpdatedAtString: 2019-12-01T11:06:51.908+01:00
+  initializedAtString: 2019-11-30T10:47:13.608+01:00
+  localBranches:
+  - name: Jarno
+    tracking: origin/Jarno
+  - name: master
+    tracking: origin/master
+  remoteBranches:
+  - name: origin/Jarno
+    tracking: '[None]'
+  - name: origin/master
+    tracking: '[None]'
+  remotes:
+  - name: origin
+    url: https://github.com/rowins/test.git
+    login: 
+    user: 
+    host: 
+    function: 0
+    token: 
+  localConfigBranches:
+    keys:
+    - Jarno
+    - master
+    values:
+    - name: Jarno
+      remote:
+        name: origin
+        url: https://github.com/rowins/test.git
+      trackingBranch: Jarno
+    - name: master
+      remote:
+        name: origin
+        url: https://github.com/rowins/test.git
+      trackingBranch: master
+  remoteConfigBranches:
+    keys:
+    - origin
+    subKeys:
+    - Values:
+      - Jarno
+      - master
+    subKeyValues:
+    - Values:
+      - name: Jarno
+        remote:
+          name: origin
+          url: https://github.com/rowins/test.git
+        trackingBranch: 
+      - name: master
+        remote:
+          name: origin
+          url: https://github.com/rowins/test.git
+        trackingBranch: 
+  configRemotes:
+    keys:
+    - origin
+    values:
+    - name: origin
+      url: https://github.com/rowins/test.git

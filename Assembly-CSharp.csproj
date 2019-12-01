@@ -62,15 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
-    <Compile Include="Assets\RoadTool\Scripts\RoadMath.cs" />
-    <Compile Include="Assets\RoadTool\Scripts\RoadUtils.cs" />
-    <Compile Include="Assets\Scripts\ControlledVelocity.cs" />
-    <None Include="Assets\UK Terraced Houses FREE\Readme.txt" />
-    <None Include="Assets\RoadTool\Texture\Texture Credits.txt" />
-    <None Include="Assets\RoadTool\README.txt" />
-    <None Include="Assets\RoadTool\Example\Standard Assets\Skyboxes\_skybox info.txt" />
-    <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
+    <Compile Include="Assets\Models\Road\RoadTool\Scripts\Road.cs" />
+    <Compile Include="Assets\Models\Road\RoadTool\Scripts\RoadMath.cs" />
+    <Compile Include="Assets\Models\Road\RoadTool\Scripts\RoadUtils.cs" />
+    <Compile Include="Assets\Scripts\Player\ControlledVelocity.cs" />
+    <None Include="Assets\Models\Road\RoadTool\Texture\Texture Credits.txt" />
+    <None Include="Assets\Models\Road\RoadTool\README.txt" />
+    <None Include="Assets\Models\Road\RoadTool\Example\Standard Assets\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\Models\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
