@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{99F4CE74-5AC2-2F42-1729-7A8012A01CC2}</ProjectGuid>
+    <ProjectGuid>{C570717A-60F6-4835-B2A3-D999F36CA466}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,37 +65,41 @@
     <Compile Include="Assets\Models\Road\RoadTool\Scripts\Road.cs" />
     <Compile Include="Assets\Models\Road\RoadTool\Scripts\RoadMath.cs" />
     <Compile Include="Assets\Models\Road\RoadTool\Scripts\RoadUtils.cs" />
+    <Compile Include="Assets\Scripts\Newspaper\Collision.cs" />
+    <Compile Include="Assets\Scripts\Newspaper\Throwing.cs" />
+    <Compile Include="Assets\Scripts\Newspaper\Variables.cs" />
     <Compile Include="Assets\Scripts\Player\ControlledVelocity.cs" />
+    <Compile Include="Assets\Scripts\Player\ThrowNewspaper.cs" />
     <None Include="Assets\Models\Road\RoadTool\Texture\Texture Credits.txt" />
     <None Include="Assets\Models\Road\RoadTool\README.txt" />
     <None Include="Assets\Models\Road\RoadTool\Example\Standard Assets\Skyboxes\_skybox info.txt" />
     <None Include="Assets\Models\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/PaperBoy/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Google Drive/School/Blok 2/Gametechnology introductieproject/Github/chimpanzeegames/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
