@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45071417, g: 0.50066227, b: 0.57486945, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -219,11 +219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1385343751}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 3c4624d93eb4b224a9128e0213d49e03,
-        type: 3}
-      propertyPath: m_Name
-      value: House 4
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3c4624d93eb4b224a9128e0213d49e03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,6 +288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3c4624d93eb4b224a9128e0213d49e03,
+        type: 3}
+      propertyPath: m_Name
+      value: House 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4624d93eb4b224a9128e0213d49e03, type: 3}
@@ -723,7 +723,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 5.92e-42, y: 1.02e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1121,22 +1121,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1385343751}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 30fe95221d82a93449e501f01a38f841,
-        type: 3}
-      propertyPath: m_Name
-      value: house 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7227900190079297466, guid: 30fe95221d82a93449e501f01a38f841,
         type: 3}
       propertyPath: m_Name
       value: window
       objectReference: {fileID: 0}
     - target: {fileID: -7227900190079297466, guid: 30fe95221d82a93449e501f01a38f841,
-        type: 3}
-      propertyPath: m_TagString
-      value: window
-      objectReference: {fileID: 0}
-    - target: {fileID: -1565795280433432230, guid: 30fe95221d82a93449e501f01a38f841,
         type: 3}
       propertyPath: m_TagString
       value: window
@@ -1211,6 +1201,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: -1565795280433432230, guid: 30fe95221d82a93449e501f01a38f841,
+        type: 3}
+      propertyPath: m_TagString
+      value: window
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 30fe95221d82a93449e501f01a38f841,
+        type: 3}
+      propertyPath: m_Name
+      value: house 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30fe95221d82a93449e501f01a38f841, type: 3}
 --- !u!1001 &1191965614
@@ -1220,11 +1220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1385343751}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 16cb109dd536dcd4892678f1c2c28186,
-        type: 3}
-      propertyPath: m_Name
-      value: House 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 16cb109dd536dcd4892678f1c2c28186,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1294,6 +1289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 16cb109dd536dcd4892678f1c2c28186,
+        type: 3}
+      propertyPath: m_Name
+      value: House 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16cb109dd536dcd4892678f1c2c28186, type: 3}
@@ -1581,11 +1581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1385343751}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: bf79a198f08f76d43bc2c9d120e03f49,
-        type: 3}
-      propertyPath: m_Name
-      value: House 2
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bf79a198f08f76d43bc2c9d120e03f49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1655,6 +1650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 75.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bf79a198f08f76d43bc2c9d120e03f49,
+        type: 3}
+      propertyPath: m_Name
+      value: House 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf79a198f08f76d43bc2c9d120e03f49, type: 3}
@@ -3407,7 +3407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3124291292557722586}
   - component: {fileID: 2089933802601787854}
-  - component: {fileID: 2089933802601787853}
   - component: {fileID: 2089933802601787852}
   - component: {fileID: 2089933802601787851}
   - component: {fileID: 2089933802601787850}
@@ -3461,23 +3460,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: {x: 0, y: 0, z: 0.5}
-  keyOne: 273
-  keyTwo: 274
---- !u!114 &2089933802601787853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089933802601787849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f47375a2003bdd41b6ba710f1e854d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Force: {x: 0.2, y: 0, z: 0}
-  keyOne: 275
-  keyTwo: 276
+  speed: 0
+  acceleration: 7.22
+  turnSpeed: 8.5
+  keyForward: 273
+  keyBackward: 274
+  keyLeft: 276
+  keyRight: 275
 --- !u!114 &2089933802601787854
 MonoBehaviour:
   m_ObjectHideFlags: 0
