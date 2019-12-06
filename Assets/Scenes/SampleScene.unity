@@ -3411,6 +3411,7 @@ GameObject:
   - component: {fileID: 2089933802601787851}
   - component: {fileID: 2089933802601787850}
   - component: {fileID: 2089933802601787855}
+  - component: {fileID: 2089933802601787853}
   m_Layer: 0
   m_Name: man+riding+bike
   m_TagString: Untagged
@@ -3467,6 +3468,18 @@ MonoBehaviour:
   keyBackward: 274
   keyLeft: 276
   keyRight: 275
+--- !u!114 &2089933802601787853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089933802601787849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c800b94160b48bc408f5095a2d37a014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2089933802601787854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,21 +3493,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspaper: {fileID: 380010184334061243}
---- !u!111 &2089933802601787855
-Animation:
+--- !u!95 &2089933802601787855
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089933802601787849}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 871dd296ce53d1d459db57099d65350f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2142106282311726789
 GameObject:
   m_ObjectHideFlags: 0

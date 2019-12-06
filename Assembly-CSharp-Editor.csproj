@@ -63,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Models\Road\RoadTool\Editor\RoadTool.cs" />
+    <None Include="Assets\UMotionEditor\Plugins\Windows\Editor\x64\AutodeskFbxSdkLicense.txt" />
+    <None Include="Assets\UMotionEditor\Plugins\Windows\Editor\x64\UnityFbxSdkNativeLicense.txt" />
+    <None Include="Assets\UMotionEditor\Plugins\MacOS\Editor\x64\UnityFbxSdkNativeLicense.txt" />
+    <None Include="Assets\UMotionEditor\Plugins\MacOS\Editor\x64\AutodeskFbxSdkLicense.txt" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -290,6 +294,12 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Assets/UMotionEditor/Plugins/Application/UMotionApplication.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionEditor">
+      <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Assets/UMotionEditor/Plugins/Editor/UMotionEditor.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -653,6 +663,14 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{C570717A-60F6-4835-B2A3-D999F36CA466}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="UMotionSourceApplication.csproj">
+      <Project>{4E810905-FA5D-892D-13B2-FC689FF5AEB4}</Project>
+      <Name>UMotionSourceApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="UMotionSourceEditor.csproj">
+      <Project>{0DF03894-2455-ADFA-3D14-14CCAA001CC7}</Project>
+      <Name>UMotionSourceEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

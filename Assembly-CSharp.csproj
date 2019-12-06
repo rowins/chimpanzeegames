@@ -69,11 +69,20 @@
     <Compile Include="Assets\Scripts\Newspaper\Throwing.cs" />
     <Compile Include="Assets\Scripts\Newspaper\Variables.cs" />
     <Compile Include="Assets\Scripts\Player\ControlledVelocity.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Player\ThrowNewspaper.cs" />
+    <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
+    <None Include="Assets\UMotionEditor\Shaders\UnlitDashedLine.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Models\Road\RoadTool\Texture\Texture Credits.txt" />
+    <None Include="Assets\UMotionEditor\Shaders\ColorUnlitTransparent.shader" />
     <None Include="Assets\Models\Road\RoadTool\README.txt" />
     <None Include="Assets\Models\Road\RoadTool\Example\Standard Assets\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\UMotionEditor\Shaders\UnlitLine.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\ColorUnlit.shader" />
+    <None Include="Assets\UMotionEditor\Shaders\WiresOnly.shader" />
     <None Include="Assets\Models\Terrain\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
+    <None Include="Assets\UMotionEditor\Shaders\CameraLit.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -277,6 +286,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>C:/Users/jarno/Documents/GitHub/chimpanzeegames/Assets/UMotionEditor/Plugins/Application/UMotionApplication.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -632,6 +644,16 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UMotionSourceApplication.csproj">
+      <Project>{4E810905-FA5D-892D-13B2-FC689FF5AEB4}</Project>
+      <Name>UMotionSourceApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="UMotionSourceEditor.csproj">
+      <Project>{0DF03894-2455-ADFA-3D14-14CCAA001CC7}</Project>
+      <Name>UMotionSourceEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
