@@ -15,14 +15,5 @@ public class Throwing : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (GetComponent<Rigidbody>().velocity.x < 0)
-        {
-            GetComponent<Rigidbody>().velocity += new Vector3(0.1f, 0, 0);
-        }
-        else
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        }
-
     }
 }

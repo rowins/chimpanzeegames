@@ -16,13 +16,13 @@ public class ThrowNewspaper : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.N))
         {
-            Instantiate(newspaper, new Vector3(transform.position.x -1.2f, transform.position.y + 1.8F, transform.position.z), Quaternion.identity);
             newspaper.GetComponent<Variables>().richting = 1;
+            Instantiate(newspaper, new Vector3(transform.position.x -1.2f, transform.position.y + 1.8F, transform.position.z), Quaternion.identity);
         }
         if (Input.GetKeyUp(KeyCode.M))
         {
-            Instantiate(newspaper, new Vector3(transform.position.x + 2f, transform.position.y + 1.8F, transform.position.z), Quaternion.identity);
             newspaper.GetComponent<Variables>().richting = -1;
+            Instantiate(newspaper, new Vector3(transform.position.x + 2f, transform.position.y + 1.8F, transform.position.z), Quaternion.identity);
         }
     }
 }

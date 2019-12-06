@@ -9,17 +9,20 @@ public class PlayerAnimator : MonoBehaviour
     void Start()
     {
         timer = 0;
-        gameObject.GetComponent<Animator>().Play("Player Animation");
+        if (GetComponent<ControlledVelocity>().speed != 0) gameObject.GetComponent<Animator>().Play("Player Animation");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        timer++;
-
-        if (timer % 45 == 0)
+        if (GetComponent<ControlledVelocity>().speed != 0)
         {
-            gameObject.GetComponent<Animator>().Play("Player Animation", -1, 0);
+            timer++;
+
+            if (timer % 210 == 0)
+            {
+                gameObject.GetComponent<Animator>().Play("Player Animation", -1, 0.05f);
+            }
         }
     }
 }

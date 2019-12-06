@@ -7,8 +7,7 @@ public class ControlledVelocity : MonoBehaviour
     [SerializeField]
     Vector3 Force;
 
-    [SerializeField]
-    float speed;
+    public float speed;
 
     [SerializeField]
     float acceleration;
@@ -31,13 +30,15 @@ public class ControlledVelocity : MonoBehaviour
     float angleY;
     float velX, velY;
     float initialTurnSpeed;
+    float maxSpeed;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         speed = 0;
-        acceleration = 500;
-        initialTurnSpeed = 75;
+        maxSpeed = 900;
+        acceleration = 100;
+        initialTurnSpeed = 100;
     }
 
     // Update is called once per frame
@@ -49,15 +50,16 @@ public class ControlledVelocity : MonoBehaviour
 
         if (Input.GetKey(keyForward))
         {
-            speed += acceleration * Time.deltaTime;
+            if (speed <= maxSpeed) speed += acceleration * Time.deltaTime;
         }
 
         if (Input.GetKey(keyBackward))
         {
-            if (speed >= 0) speed -= acceleration * 5 * Time.deltaTime;
+            if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
         }
 
         if (speed < 0) speed = 0;
+        if (speed > maxSpeed) speed = maxSpeed;
 
         if (Input.GetKey(keyLeft))
         {
