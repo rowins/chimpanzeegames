@@ -22,14 +22,14 @@ public class ThrowNewspaper : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.N))
         {
-            newspaper.GetComponent<Variables>().richting = 1;
+            newspaper.GetComponent<Variables>().richting = -1;
             CalculateVelocity();
             Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
         }
 
         if (Input.GetKeyUp(KeyCode.M))
         {
-            newspaper.GetComponent<Variables>().richting = -1;
+            newspaper.GetComponent<Variables>().richting = 1;
             CalculateVelocity();
             Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
         }

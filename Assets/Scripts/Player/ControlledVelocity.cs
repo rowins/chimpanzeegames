@@ -28,7 +28,7 @@ public class ControlledVelocity : MonoBehaviour
     [SerializeField]
     KeyCode keyRight;
 
-    float angleY;
+    public float angleY;
     public float velX, velZ;
     float initialTurnSpeed;
 

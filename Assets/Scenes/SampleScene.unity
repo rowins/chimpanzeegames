@@ -2424,6 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553ca232350c8db44b35ad3e898e1324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!54 &380010184334061246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3462,12 +3463,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Force: {x: 0, y: 0, z: 0.5}
   speed: 0
+  maxSpeed: 0
   acceleration: 7.22
   turnSpeed: 8.5
   keyForward: 273
   keyBackward: 274
   keyLeft: 276
   keyRight: 275
+  angleY: 0
+  velX: 0
+  velZ: 0
 --- !u!114 &2089933802601787853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,6 +3498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspaper: {fileID: 380010184334061243}
+  speed: 0
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!95 &2089933802601787855
 Animator:
   serializedVersion: 3
@@ -5980,7 +5987,7 @@ Transform:
   m_GameObject: {fileID: 380010184334061243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 512.47, y: 1.3, z: -6.975}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.025, y: 0.05, z: 0.025}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

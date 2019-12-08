@@ -12,6 +12,30 @@ public class PlayerAnimator : MonoBehaviour
         if (GetComponent<ControlledVelocity>().speed != 0) gameObject.GetComponent<Animator>().Play("Player Animation");
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            gameObject.GetComponent<Animator>().Play("Steering Left", -1, 0f);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            gameObject.GetComponent<Animator>().Play("Steering Right", -1, 0f);
+        }
+        else if (Input.GetKey(KeyCode.N))
+        {
+            gameObject.GetComponent<Animator>().Play("Throwing Left");
+        }
+        else if (Input.GetKey(KeyCode.M))
+        {
+            gameObject.GetComponent<Animator>().Play("Throwing Right");
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().Play("Player Animation");
+        }
+    }
+
     void FixedUpdate()
     {
         if (GetComponent<ControlledVelocity>().speed != 0)
