@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-sceneSetups: []
-=======
 sceneSetups:
-- path: Assets/BrokenVector/LowPolyRoadPack/Demo/Low Poly Road Pack Demo.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
->>>>>>> Stashed changes
