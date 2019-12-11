@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlledVelocity : MonoBehaviour
 {
@@ -31,13 +32,16 @@ public class ControlledVelocity : MonoBehaviour
     public float angleY;
     public float velX, velZ;
     float initialTurnSpeed;
+    public Text textDBG;
+    public bool inGate;
 
     void Awake()
     {
-        speed = 0;
+        speed = 300;
         maxSpeed = 900;
         acceleration = 100;
         initialTurnSpeed = 100;
+        inGate = false;
     }
 
     void FixedUpdate()
@@ -68,7 +72,36 @@ public class ControlledVelocity : MonoBehaviour
             gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
         }
 
-        GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, GetComponent<Rigidbody>().velocity.y, velZ * speed);
+        GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, GetComponent<Rigidbody>().velocity.y - 5, velZ * speed);
+
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Gate") == true)
+        {
+            if (inGate == false)
+            {
+                inGate = true;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Gate") == true)
+        {
+            if (inGate == true)
+            {
+                inGate = false;
+            }
+
+        }
+        if (other.CompareTag("bound") == true && !inGate)
+        {
+            speed = 0;
+        }
     }
 
     void CalculateSpeed()
