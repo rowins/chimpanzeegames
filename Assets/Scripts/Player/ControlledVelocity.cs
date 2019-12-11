@@ -68,7 +68,7 @@ public class ControlledVelocity : MonoBehaviour
             gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
         }
 
-        GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, 0, velZ * speed);
+        GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, GetComponent<Rigidbody>().velocity.y, velZ * speed);
     }
 
     void CalculateSpeed()
