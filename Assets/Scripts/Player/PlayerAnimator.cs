@@ -14,6 +14,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        // Alle animaties afspelen op het juiste moment.
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.GetComponent<Animator>().Play("Steering Left", -1, 0f);
@@ -48,10 +50,27 @@ public class PlayerAnimator : MonoBehaviour
                 gameObject.GetComponent<Animator>().Play("Player Animation", -1, 0.05f);
             }
         }
-
         else
         {
-            gameObject.GetComponent<Animator>().speed = 0;
+            gameObject.GetComponent<Animator>().speed = 0; // De animatie laten stoppen
+        }
+    }
+
+    public void PlayAnimation(string animation)
+    {
+        switch (animation)
+        {
+            case "Steering Left":
+            case "Steering Right":
+                gameObject.GetComponent<Animator>().Play(animation, -1, 0f);
+                break;
+            case "Throwing Right":
+            case "Throwing Left":
+                gameObject.GetComponent<Animator>().Play(animation);
+                break;
+            default:
+                gameObject.GetComponent<Animator>().Play("Player Animation");
+                break;
         }
     }
 }
