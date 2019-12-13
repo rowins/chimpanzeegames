@@ -61,6 +61,17 @@ public class ThrowNewspaper : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A public method to throw a newspaper (for the Kinect Controller to call)
+    /// </summary>
+    /// <param name="richting">-1 is to the left, 1 is to the right</param>
+    public void CreateNewspaper(int richting)
+    {
+        newspaper.GetComponent<Variables>().richting = richting;
+        CalculateVelocity();
+        Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
+    }
+
     void CalculateVelocity()
     {
         if (newspaper.GetComponent<Variables>().richting == 1)

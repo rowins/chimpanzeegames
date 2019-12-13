@@ -87,4 +87,22 @@ public class PlayerAnimator : MonoBehaviour
                 break;
         }
     }
+
+    public void PlayAnimation(string animation)
+    {
+        switch (animation)
+        {
+            case "Steering Left":
+            case "Steering Right":
+                gameObject.GetComponent<Animator>().Play(animation, -1, 0f);
+                break;
+            case "Throwing Right":
+            case "Throwing Left":
+                gameObject.GetComponent<Animator>().Play(animation);
+                break;
+            default:
+                gameObject.GetComponent<Animator>().Play("Player Animation");
+                break;
+        }
+    }
 }
