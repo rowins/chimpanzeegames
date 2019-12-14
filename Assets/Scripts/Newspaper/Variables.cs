@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Variables : MonoBehaviour
 {
-    public int richting;
+    public float richting;
     // Start is called before the first frame update
     void Start()
     {

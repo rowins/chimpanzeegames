@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Window : MonoBehaviour
 {
+    bool breaked;
+
     public AudioClip impact;
     AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        breaked = false;
+
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -24,18 +28,23 @@ public class Window : MonoBehaviour
         // Als een krant door een raam wordt gegooid.
         if (otherObj.gameObject.tag == "newspaper")
         {
-            audioSource.PlayOneShot(impact, 0.7F);
-            if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
+            if (breaked == false)
             {
-                GetComponentInParent<Gegevens>().isAbonnee = false;
-                GetComponentInParent<Gegevens>().krantBezorgd = true;
-                GameObject.Find("Score").GetComponent<Score>().abonnees--;
+                audioSource.PlayOneShot(impact, 0.7F);
+
+                if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
+                {
+                    GetComponentInParent<Gegevens>().isAbonnee = false;
+                    GetComponentInParent<Gegevens>().krantBezorgd = true;
+                    GameObject.Find("Score").GetComponent<Score>().abonnees--;
+                }
+                else if (GetComponentInParent<Gegevens>().krantBezorgd == false && GetComponentInParent<Gegevens>().wasAbonnee == false)
+                {
+                    GetComponentInParent<Gegevens>().krantBezorgd = true;
+                    // Bonuspunten
+                }
             }
-            else if (GetComponentInParent<Gegevens>().krantBezorgd == false)
-            {
-                GetComponentInParent<Gegevens>().krantBezorgd = true;
-                // Bonuspunten
-            }
+            
         }
     }
 }
