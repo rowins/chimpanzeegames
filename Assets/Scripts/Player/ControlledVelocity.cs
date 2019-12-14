@@ -49,7 +49,7 @@ public class ControlledVelocity : MonoBehaviour
         CalculateSpeed();
         turnSpeed = initialTurnSpeed + (speed * 0.01f);
 
-        // Input van de toetsen registeren en acties erop uitvoeren.
+        // Input van de toetsen registeren en acties erop uitvoeren..
 
         if (Input.GetKey(keyForward))
         {
