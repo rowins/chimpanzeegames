@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
+    public int timeOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +13,7 @@ public class Collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider otherObj)
@@ -22,6 +23,5 @@ public class Collision : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log(1);
         }
-     
     }
 }
