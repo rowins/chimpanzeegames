@@ -12,7 +12,7 @@ public class MovementObstacle : MonoBehaviour
 
     void start()
     {
-        if (distance < 0) distance = -distance;
+        //if (distance < 0) distance = -distance;   probeerde het te verbeeteren maar dit script kan geen negative getallen aan
     }
 
     void Update()
