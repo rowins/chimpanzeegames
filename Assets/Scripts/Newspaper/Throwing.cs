@@ -19,6 +19,5 @@ public class Throwing : MonoBehaviour
         Debug.Log(player.GetComponent<ControlledVelocity>().velX);
         Debug.Log(player.GetComponent<ControlledVelocity>().velZ);
         GetComponent<Rigidbody>().velocity = new Vector3(velX * 1000 * rigg, 0, velZ * 1000 * rigg);
-
     }
 }

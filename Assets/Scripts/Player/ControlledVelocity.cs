@@ -53,27 +53,31 @@ public class ControlledVelocity : MonoBehaviour
 
         if (Input.GetKey(keyForward))
         {
-            if (speed <= maxSpeed) speed += acceleration * Time.deltaTime; // De velocity steeds verhogen
+            Accelerate();
+            //if (speed <= maxSpeed) speed += acceleration * Time.deltaTime; // De velocity steeds verhogen
         }
 
         if (Input.GetKey(keyBackward))
         {
-            if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
+            Decelerate();
+            //if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
         }
 
-        if (speed < 0) speed = 0;
-        if (speed > maxSpeed) speed = maxSpeed;
+        //if (speed < 0) speed = 0;
+        //if (speed > maxSpeed) speed = maxSpeed;
 
         // Hieronder de speler roteren
 
         if (Input.GetKey(keyLeft))
         {
-            gameObject.transform.eulerAngles -= new Vector3(0, turnSpeed * Time.deltaTime, 0);
+            Turn(-1);
+            //gameObject.transform.eulerAngles -= new Vector3(0, turnSpeed * Time.deltaTime, 0);
         }
 
         if (Input.GetKey(keyRight))
         {
-            gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
+            Turn(1);
+            //gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
         }
 
         GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, GetComponent<Rigidbody>().velocity.y - 5, velZ * speed);
@@ -128,6 +132,7 @@ public class ControlledVelocity : MonoBehaviour
     public void Accelerate()
     {
         if (speed <= maxSpeed) speed += acceleration * Time.deltaTime;
+        if (speed > maxSpeed) speed = maxSpeed;
     }
 
     /// <summary>
@@ -136,6 +141,7 @@ public class ControlledVelocity : MonoBehaviour
     public void Decelerate()
     {
         if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
+        if (speed < 0) speed = 0;
     }
 
     /// <summary>

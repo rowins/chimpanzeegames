@@ -18,23 +18,34 @@ public class PlayerAnimator : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.GetComponent<Animator>().Play("Steering Left", -1, 0f);
+            PlayAnimation("Steering Left");
+            //gameObject.GetComponent<Animator>().Play("Steering Left", -1, 0f);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.GetComponent<Animator>().Play("Steering Right", -1, 0f);
+            PlayAnimation("Steering Right");
+            //gameObject.GetComponent<Animator>().Play("Steering Right", -1, 0f);
         }
         else if (Input.GetKey(KeyCode.N))
         {
-            gameObject.GetComponent<Animator>().Play("Throwing Left");
+            PlayAnimation("Throwing Left");
+            /*if (FindObjectOfType<HUDManager>().newsPaperCheck())
+            {
+                gameObject.GetComponent<Animator>().Play("Throwing Left");
+            }*/
         }
         else if (Input.GetKey(KeyCode.M))
         {
-            gameObject.GetComponent<Animator>().Play("Throwing Right");
+            PlayAnimation("Throwing Right");
+            /*if (FindObjectOfType<HUDManager>().newsPaperCheck())
+            {
+                gameObject.GetComponent<Animator>().Play("Throwing Right");
+            }*/
         }
         else
         {
-            gameObject.GetComponent<Animator>().Play("Player Animation");
+            PlayAnimation("Player Animation");
+            //gameObject.GetComponent<Animator>().Play("Player Animation");
         }
     }
 
@@ -62,11 +73,14 @@ public class PlayerAnimator : MonoBehaviour
         {
             case "Steering Left":
             case "Steering Right":
-                gameObject.GetComponent<Animator>().Play(animation, -1, 0f);
+                    gameObject.GetComponent<Animator>().Play(animation, -1, 0f);
                 break;
             case "Throwing Right":
             case "Throwing Left":
-                gameObject.GetComponent<Animator>().Play(animation);
+                if (FindObjectOfType<HUDManager>().newsPaperCheck())
+                {
+                    gameObject.GetComponent<Animator>().Play(animation);
+                }
                 break;
             default:
                 gameObject.GetComponent<Animator>().Play("Player Animation");
