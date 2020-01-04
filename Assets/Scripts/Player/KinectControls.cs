@@ -37,6 +37,10 @@ public class KinectControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Kinect.CameraSpacePoint leftHandPosition = new Kinect.CameraSpacePoint();
+        Kinect.CameraSpacePoint rightHandPosition = new Kinect.CameraSpacePoint();
+        Kinect.PointF lean = new Kinect.PointF();
+
         #region Gather Intel
         if (BodySourceManager == null)
         {
@@ -52,9 +56,6 @@ public class KinectControls : MonoBehaviour
         {
             return;
         }
-        Kinect.CameraSpacePoint leftHandPosition = new Kinect.CameraSpacePoint();
-        Kinect.CameraSpacePoint rightHandPosition = new Kinect.CameraSpacePoint();
-        Kinect.PointF lean = new Kinect.PointF();
         foreach (var body in data)
         {
             if (body == null)
