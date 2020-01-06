@@ -12,13 +12,17 @@ public class Gegevens : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isAbonnee = true;
+        isAbonnee = false;
+        int IsAbb = Random.Range(1, 4);
+        if (IsAbb == 1)
+        {
+            isAbonnee = true;
+        }
         wasAbonnee = isAbonnee;
         krantBezorgd = false;
 
         if (isAbonnee == true)
         {
-            Debug.Log(1);
             GameObject.Find("Score").GetComponent<Score>().abonnees++;
         }
     }
