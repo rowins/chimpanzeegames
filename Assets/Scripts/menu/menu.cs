@@ -10,4 +10,10 @@ public class menu : MonoBehaviour
         Debug.Log(1);
         SceneManager.LoadScene("monday-1");
     }
+
+    public void ExitGame()
+    {
+        Debug.Log(1);
+        Application.Quit();
+    }
 }

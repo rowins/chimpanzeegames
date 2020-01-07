@@ -22,17 +22,27 @@ public class ThrowNewspaper : MonoBehaviour
         // Krant naar links laten gooien
         if (Input.GetKeyUp(KeyCode.N))
         {
-            newspaper.GetComponent<Variables>().richting = -1;
-            CalculateVelocity();
-            Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
+            if (FindObjectOfType<HUDManager>().newsPaperCheck())
+            {
+                CreateNewspaper(-1);
+                /* FindObjectOfType<HUDManager>().thrown();
+                newspaper.GetComponent<Variables>().richting = -1;
+                CalculateVelocity();
+                Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity); */
+            }
         }
 
         // Krant naar rechts laten gooien
         if (Input.GetKeyUp(KeyCode.M))
         {
-            newspaper.GetComponent<Variables>().richting = 1;
-            CalculateVelocity();
-            Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
+            if (FindObjectOfType<HUDManager>().newsPaperCheck())
+            {
+                CreateNewspaper(1);
+                /*FindObjectOfType<HUDManager>().thrown();
+                newspaper.GetComponent<Variables>().richting = 1;
+                CalculateVelocity();
+                Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);*/
+            }
         }
     }
 
@@ -42,9 +52,13 @@ public class ThrowNewspaper : MonoBehaviour
     /// <param name="richting">-1 is to the left, 1 is to the right</param>
     public void CreateNewspaper(int richting)
     {
-        newspaper.GetComponent<Variables>().richting = richting;
-        CalculateVelocity();
-        Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
+        if (FindObjectOfType<HUDManager>().newsPaperCheck())
+        {
+            FindObjectOfType<HUDManager>().thrown();
+            newspaper.GetComponent<Variables>().richting = richting;
+            CalculateVelocity();
+            Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity);
+        }
     }
 
     void CalculateVelocity()

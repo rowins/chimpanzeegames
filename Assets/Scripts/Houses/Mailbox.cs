@@ -26,6 +26,7 @@ public class Mailbox : MonoBehaviour
         {
             if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
             {
+                FindObjectOfType<ScoreUpdater>().addScore();
                 audioSource.PlayOneShot(impact, 0.7F);
                 GetComponentInParent<Gegevens>().krantBezorgd = true;
                 GameObject.Find("Score").GetComponent<Score>().score += 50;
