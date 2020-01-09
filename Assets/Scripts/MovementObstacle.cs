@@ -11,9 +11,9 @@ public class MovementObstacle : MonoBehaviour
     Vector3 direction;
     bool forward = true;
 
-    void start()
+    void Start()
     {
-        //Debug.Log("start");
+        Debug.Log("start");
         direction = location / location.magnitude;
     }
 

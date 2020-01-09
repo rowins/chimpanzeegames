@@ -12,7 +12,6 @@ public class MovementCar : MonoBehaviour
 
     void Start()
     {
-        //Debug.Log("start");
         direction = location / location.magnitude;
     }
 
