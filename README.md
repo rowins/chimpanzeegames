@@ -1,2 +1,0 @@
-# chimpanzeegames
-Remake of Paperboy
