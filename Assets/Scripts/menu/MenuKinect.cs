@@ -10,9 +10,6 @@ public class MenuKinect : MonoBehaviour
     public GameObject BodySourceManager;
     private BodySourceManager bodyManager;
 
-    public ButtonRange playButton;
-    public ButtonRange exitButton;
-
     public float closedHandReset = 1f;
     private float closedHandTimer;
 
@@ -66,7 +63,7 @@ public class MenuKinect : MonoBehaviour
             return;
         }
 
-        Vector3 position = new Vector3(handPosition.X * 3, handPosition.Y * 3, handPosition.Z) * 10;
+        Vector3 position = new Vector3(handPosition.X, handPosition.Y, 0) * 10;
         Hand.transform.SetPositionAndRotation(position, Hand.transform.rotation);
 
         SpriteRenderer sprite = Hand.GetComponent<SpriteRenderer>();
@@ -77,12 +74,14 @@ public class MenuKinect : MonoBehaviour
             sprite.color = new Color(0, 1, 0);
             closedHandTimer = closedHandReset;
 
-            if (playButton.InYRange(position.y))
+            if (InYRange(position.y, 5f, 3f))
             {
+                sprite.color = new Color(0, 0, 1);
                 menu.PlayGame();
             }
-            else if (exitButton.InYRange(position.y))
+            else if (InYRange(position.y, -1f, -3f))
             {
+                sprite.color = new Color(1, 1, 0);
                 menu.ExitGame();
             }
             
@@ -97,5 +96,14 @@ public class MenuKinect : MonoBehaviour
             }
         }
         
+    }
+
+    public bool InYRange(float Y, float top, float bottom) // Unfortunately it seems the values for top and bottom have to be hardcoded and discovered by hand, which is problematic if one wants to add more buttons
+    {
+        if ((Y < top) && (Y > bottom))
+        {
+            return true;
+        }
+        return false;
     }
 }
