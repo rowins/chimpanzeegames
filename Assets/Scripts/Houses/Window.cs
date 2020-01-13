@@ -13,14 +13,7 @@ public class Window : MonoBehaviour
     void Start()
     {
         breaked = false;
-
         audioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnTriggerEnter(Collider otherObj)
@@ -30,21 +23,26 @@ public class Window : MonoBehaviour
         {
             if (breaked == false)
             {
-                audioSource.PlayOneShot(impact, 0.7F);
-
-                if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
-                {
-                    GetComponentInParent<Gegevens>().isAbonnee = false;
-                    GetComponentInParent<Gegevens>().krantBezorgd = true;
-                    GameObject.Find("Score").GetComponent<Score>().abonnees--;
-                }
-                else if (GetComponentInParent<Gegevens>().krantBezorgd == false && GetComponentInParent<Gegevens>().wasAbonnee == false)
-                {
-                    GetComponentInParent<Gegevens>().krantBezorgd = true;
-                    // Bonuspunten
-                }
+                BreakWindow();
             }
-            
+        }
+    }
+
+    void BreakWindow()
+    {
+        audioSource.PlayOneShot(impact, 0.7F);
+
+        if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
+        {
+            // De speler raakt een abonnee kwijt
+            GetComponentInParent<Gegevens>().isAbonnee = false;
+            GetComponentInParent<Gegevens>().krantBezorgd = true;
+            GameObject.Find("Score").GetComponent<Score>().abonnees--;
+        }
+        else if (GetComponentInParent<Gegevens>().krantBezorgd == false && GetComponentInParent<Gegevens>().wasAbonnee == false)
+        {
+            // De speler krijgt bonuspunten
+            GetComponentInParent<Gegevens>().krantBezorgd = true;
         }
     }
 }

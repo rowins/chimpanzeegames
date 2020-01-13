@@ -17,12 +17,6 @@ public class MoveWall : MonoBehaviour
     float distX, distZ;
     public float distance;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

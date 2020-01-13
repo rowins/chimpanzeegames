@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void Start()
     {
+        // De timer zorgt ervoor dat de animatie op het goede moment wordt gereset
         timer = 0;
         if (GetComponent<ControlledVelocity>().speed != 0) gameObject.GetComponent<Animator>().Play("Player Animation");
     }

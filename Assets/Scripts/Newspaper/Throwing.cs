@@ -9,7 +9,6 @@ public class Throwing : MonoBehaviour
 
     void Start()
     {
-
         // De krant onder de goede richting / hoek gooien
         player = GameObject.Find("Player");
         velX = Mathf.Sin(player.GetComponent<ControlledVelocity>().angleY + 90 * (Mathf.PI / 180)) * Time.deltaTime;

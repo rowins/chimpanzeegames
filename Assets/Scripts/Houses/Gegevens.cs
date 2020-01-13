@@ -26,10 +26,4 @@ public class Gegevens : MonoBehaviour
             GameObject.Find("Score").GetComponent<Score>().abonnees++;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
