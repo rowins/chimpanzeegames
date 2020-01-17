@@ -1361,12 +1361,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1670845620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8478d38f22824a94caf3071be158e413, type: 3}
+  m_Script: {fileID: 11500000, guid: da0459e169da07043850e731ddc8ae87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1243514119}
   Hand: {fileID: 607135675}
   BodySourceManager: {fileID: 1619026680}
+  playButtonTop: 3
+  playButtonBottom: 1.5
+  exitButtonTop: 0.5
+  exitButtonBottom: -1.5
   closedHandReset: 1
 --- !u!4 &1670845622
 Transform:

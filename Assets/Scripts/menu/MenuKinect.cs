@@ -10,6 +10,11 @@ public class MenuKinect : MonoBehaviour
     public GameObject BodySourceManager;
     private BodySourceManager bodyManager;
 
+    public float playButtonTop = 3f;
+    public float playButtonBottom = 1.5f;
+    public float exitButtonTop = 0.5f;
+    public float exitButtonBottom = -1.5f;
+
     public float closedHandReset = 1f;
     private float closedHandTimer;
 
@@ -74,12 +79,12 @@ public class MenuKinect : MonoBehaviour
             sprite.color = new Color(0, 1, 0);
             closedHandTimer = closedHandReset;
 
-            if (InYRange(position.y, 5f, 3f))
+            if (InYRange(position.y, playButtonTop, playButtonBottom))
             {
                 sprite.color = new Color(0, 0, 1);
                 menu.PlayGame();
             }
-            else if (InYRange(position.y, -1f, -3f))
+            else if (InYRange(position.y, exitButtonTop, exitButtonBottom))
             {
                 sprite.color = new Color(1, 1, 0);
                 menu.ExitGame();
