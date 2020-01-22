@@ -18,7 +18,8 @@ public class KinectControls : MonoBehaviour
     public double minDistance = 0.4;
     public float minCheckedLean = 0.2f;
     // Scripts to call functions in
-    public ThrowNewspaper newsPaperScript;
+    public ThrowNewspaper leftNewspaper;
+    public ThrowNewspaper rightNewspaper;
     public ControlledVelocity movementScript;
     public PlayerAnimator animationScript;
 
@@ -66,13 +67,17 @@ public class KinectControls : MonoBehaviour
             {
                 continue;
             }
-            Kinect.Joint leftHand = joints[Kinect.JointType.HandLeft];
-            leftHandPosition = leftHand.Position;
             if (!joints.ContainsKey(Kinect.JointType.HandRight))
             {
                 continue;
             }
+            Kinect.Joint leftHand = joints[Kinect.JointType.HandLeft];
             Kinect.Joint rightHand = joints[Kinect.JointType.HandRight];
+            if (leftHand.Position == rightHand.Position)
+            {
+                continue;
+            }
+            leftHandPosition = leftHand.Position;
             rightHandPosition = rightHand.Position;
             lean = body.Lean;
             break;
@@ -133,7 +138,7 @@ public class KinectControls : MonoBehaviour
                 {
                     if (point.X - previousPoint.X < -minDistance)
                     {
-                        newsPaperScript.CreateNewspaper(-1);
+                        leftNewspaper.CreateNewspaper(-1);
                         animationScript.PlayAnimation("Throwing Left");
                         //transform.Translate(-movement); // Implementeer hier krant naar links gooien, deze regel verplaats het object nu als test
                         previousLeftHandPositions.Clear();
@@ -151,7 +156,7 @@ public class KinectControls : MonoBehaviour
                 {
                     if (point.X - previousPoint.X > minDistance)
                     {
-                        newsPaperScript.CreateNewspaper(1);
+                        rightNewspaper.CreateNewspaper(1);
                         animationScript.PlayAnimation("Throwing Right");
                         //transform.Translate(movement); // Implementeer hier krant naar recht gooien, deze regel verplaats het object nu als test
                         previousRightHandPositions.Clear();

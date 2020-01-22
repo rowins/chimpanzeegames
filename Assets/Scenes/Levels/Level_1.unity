@@ -8354,7 +8354,8 @@ MonoBehaviour:
   maxCheckedTime: 0.25
   minDistance: 0.4
   minCheckedLean: 0.2
-  newsPaperScript: {fileID: 0}
+  leftNewspaper: {fileID: 2009609250}
+  rightNewspaper: {fileID: 150073700}
   movementScript: {fileID: 1839983369}
   animationScript: {fileID: 1839983365}
   movement: {x: 3, y: 0, z: 0}
