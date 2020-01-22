@@ -8,7 +8,6 @@ public class Collision : MonoBehaviour
     public GameObject player;
     public GameObject wall;
 
-    // Start is called before the first frame update
     void Start()
     {
         Physics.IgnoreCollision(GetComponent<Collider>(), player.GetComponent<Collider>());
@@ -23,4 +22,5 @@ public class Collision : MonoBehaviour
         // De krant kan door de onzichtbare muur die achter de speler staat
         Physics.IgnoreCollision(GetComponent<Collider>(), wall.GetComponent<Collider>());
     }
+
 }

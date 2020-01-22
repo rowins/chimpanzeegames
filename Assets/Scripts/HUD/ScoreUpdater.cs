@@ -22,9 +22,9 @@ public class ScoreUpdater : MonoBehaviour
         Score.text = "Score: " + currentScore.ToString();
     }
 
-    public void addScore()
+    public void addScore(int x = 100)
     {
-        currentScore += 100;
+        currentScore += x;
     }
  }
 

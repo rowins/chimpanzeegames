@@ -11,6 +11,7 @@ TagManager:
   - Gate
   - Score
   - finish
+  - Bonus
   layers:
   - Default
   - TransparentFX
