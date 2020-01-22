@@ -33166,6 +33166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Force: {x: 0, y: 1000, z: 0.5}
   speed: 0
+  minSpeed: 0
   maxSpeed: 0
   acceleration: 7.22
   turnSpeed: 8.5
@@ -33187,7 +33188,7 @@ Transform:
   m_GameObject: {fileID: 1839983364}
   m_LocalRotation: {x: -0, y: -0.9997829, z: -0, w: -0.020835176}
   m_LocalPosition: {x: 182.12, y: -13.699999, z: 149.77}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 1712523087}
   - {fileID: 625935885}
