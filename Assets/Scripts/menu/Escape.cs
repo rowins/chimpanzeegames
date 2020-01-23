@@ -9,7 +9,12 @@ public class Escape : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Main menu");
+            LoadMainMenu();
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main menu");
     }
 }
