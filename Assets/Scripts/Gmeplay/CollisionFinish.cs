@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionFinish : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // Als de speler door de finish rijdt, wordt het volgende level geladen. 
     void OnTriggerEnter(Collider otherObj)
     {
         Debug.Log("FINISH");

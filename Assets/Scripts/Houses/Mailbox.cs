@@ -13,12 +13,6 @@ public class Mailbox : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider otherObj)
     {
         // Bij het ontvangen van een krant, actie ondernemen
@@ -26,12 +20,17 @@ public class Mailbox : MonoBehaviour
         {
             if (GetComponentInParent<Gegevens>().isAbonnee == true && GetComponentInParent<Gegevens>().krantBezorgd == false)
             {
-                FindObjectOfType<ScoreUpdater>().addScore();
-                audioSource.PlayOneShot(impact, 0.7F);
-                GetComponentInParent<Gegevens>().krantBezorgd = true;
-                GameObject.Find("Score").GetComponent<Score>().score += 50;
+                DeliverNewspaper();
                 Destroy(otherObj.gameObject);
             }
         }
+    }
+
+    void DeliverNewspaper()
+    {
+        FindObjectOfType<ScoreUpdater>().addScore();
+        audioSource.PlayOneShot(impact, 0.7F);
+        GetComponentInParent<Gegevens>().krantBezorgd = true;
+        GameObject.Find("Score").GetComponent<Score>().score += 50;
     }
 }

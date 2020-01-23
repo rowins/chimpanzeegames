@@ -28,8 +28,6 @@ public class ThrowNewspaper : MonoBehaviour
         // Krant laten gooien
         if (Input.GetKeyUp(key))
         {
-            
-            
             if (FindObjectOfType<HUDManager>().newsPaperCheck())
             {
                 CreateNewspaper(richting);
@@ -48,12 +46,10 @@ public class ThrowNewspaper : MonoBehaviour
     /// <param name="richting">-1 is to the left, 1 is to the right</param>
     public void CreateNewspaper(int richting)
     {
-        
-            FindObjectOfType<HUDManager>().thrown();
-            newspaper.GetComponent<Variables>().richting = richting;
-            CalculateVelocity();
-            Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y , transform.position.z), Quaternion.identity);
-        
+        FindObjectOfType<HUDManager>().thrown();
+        newspaper.GetComponent<Variables>().richting = richting;
+        CalculateVelocity();
+        Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y , transform.position.z), Quaternion.identity);
     }
 
     void CalculateVelocity()

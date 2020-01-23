@@ -23,4 +23,12 @@ public class HUDManager : MonoBehaviour
     {
         newspapers--;
     }
+
+    public void addNewspapers(int x)
+    {
+        if(newspapers + x <= 10)
+        {
+            newspapers += x;
+        }
+    }
 }

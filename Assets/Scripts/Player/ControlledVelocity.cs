@@ -9,6 +9,7 @@ public class ControlledVelocity : MonoBehaviour
     Vector3 Force;
 
     public float speed;
+    public float minSpeed;
     public float maxSpeed;
 
     [SerializeField]
@@ -37,9 +38,10 @@ public class ControlledVelocity : MonoBehaviour
 
     void Awake()
     {
-        speed = 300;
-        maxSpeed = 900;
-        acceleration = 100;
+        speed = 600;
+        minSpeed = 600;
+        maxSpeed = 1500;
+        acceleration = 150;
         initialTurnSpeed = 100;
         inGate = false;
     }
@@ -141,7 +143,7 @@ public class ControlledVelocity : MonoBehaviour
     public void Decelerate()
     {
         if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
-        if (speed < 0) speed = 0;
+        if (speed < 0) speed = minSpeed;
     }
 
     /// <summary>
