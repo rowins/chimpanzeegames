@@ -8654,13 +8654,12 @@ MonoBehaviour:
   maxCheckedTime: 0.25
   minDistance: 0.4
   minCheckedLean: 0.2
+  crossedArmsMargin: 0.25
   leftNewspaper: {fileID: 2009609250}
   rightNewspaper: {fileID: 150073700}
   movementScript: {fileID: 1839983369}
   animationScript: {fileID: 1839983365}
-  movement: {x: 3, y: 0, z: 0}
-  moveSideways: {x: 0.2, y: 0, z: 0}
-  moveUpDown: {x: 0, y: 0.2, z: 0}
+  escapeScript: {fileID: 723951278}
 --- !u!4 &411216749
 Transform:
   m_ObjectHideFlags: 0

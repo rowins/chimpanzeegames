@@ -55,7 +55,16 @@ public class MenuKinect : MonoBehaviour
             {
                 continue;
             }
+            if (!joints.ContainsKey(Kinect.JointType.HandLeft))
+            {
+                continue;
+            }
             Kinect.Joint hand = joints[Kinect.JointType.HandRight];
+            Kinect.Joint testHand = joints[Kinect.JointType.HandLeft];
+            if (hand.Position == testHand.Position) // Since two hands cannot be in the same position, this serves as a good check to make sure the non-null body we have does not have all default values.
+            {
+                continue;
+            }
             handPosition = hand.Position;
             if (body.HandRightState == Kinect.HandState.Closed)
             {

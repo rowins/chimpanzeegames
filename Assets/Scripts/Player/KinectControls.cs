@@ -17,27 +17,18 @@ public class KinectControls : MonoBehaviour
     public double maxCheckedTime = 0.25;
     public double minDistance = 0.4;
     public float minCheckedLean = 0.2f;
+    public float crossedArmsMargin = 0.25f;
     // Scripts to call functions in
     public ThrowNewspaper leftNewspaper;
     public ThrowNewspaper rightNewspaper;
     public ControlledVelocity movementScript;
     public PlayerAnimator animationScript;
-
-    #region Values for Function Example, NOT to be in Final Product
-    public Vector3 movement = new Vector3(3, 0, 0);
-    public Vector3 moveSideways = new Vector3(0.2f, 0, 0);
-    public Vector3 moveUpDown = new Vector3(0, 0.2f, 0);
-    #endregion
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public Escape escapeScript;
 
     // Update is called once per frame
     void Update()
     {
+        // We create some local variables in here that we pass onto other functions.
         #region Gather Intel
         if (BodySourceManager == null)
         {
@@ -73,7 +64,7 @@ public class KinectControls : MonoBehaviour
             }
             Kinect.Joint leftHand = joints[Kinect.JointType.HandLeft];
             Kinect.Joint rightHand = joints[Kinect.JointType.HandRight];
-            if (leftHand.Position == rightHand.Position)
+            if (leftHand.Position == rightHand.Position) // Since two hands cannot be in the same position, this serves as a good check to make sure the non-null body we have does not have all default values.
             {
                 continue;
             }
@@ -84,7 +75,7 @@ public class KinectControls : MonoBehaviour
         }
         #endregion
 
-        #region Hand Movement Input
+        #region Actions related to Newspaper Throwing
         UpdateTimes();
         ClearTimes(previousLeftHandPositions, previousTimesLeft);
         ClearTimes(previousRightHandPositions, previousTimesRight);
@@ -97,12 +88,15 @@ public class KinectControls : MonoBehaviour
         previousTimesLeft.Add(0);
         previousTimesRight.Add(0);
         #endregion
-
-        #region Body Lean Input
+        
         CompareLean(lean);
-        #endregion
+
+        CompareHands(leftHandPosition, rightHandPosition, crossedArmsMargin);
     }
 
+    /// <summary>
+    /// Updates the times in the arrays of past moments in time.
+    /// </summary>
     void UpdateTimes()
     {
         double deltaTime = Time.deltaTime;
@@ -116,6 +110,11 @@ public class KinectControls : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Clears positions and times too far in the past from the arrays.
+    /// </summary>
+    /// <param name="positionList"></param>
+    /// <param name="timeList"></param>
     void ClearTimes(List<Kinect.CameraSpacePoint> positionList, List<double> timeList)
     {
         for (int i = timeList.Count - 1; i >= 0; i--)
@@ -128,6 +127,11 @@ public class KinectControls : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Compare the past positions of a hand with each other.
+    /// </summary>
+    /// <param name="point"></param>
+    /// <param name="left"></param>
     void ComparePosition(Kinect.CameraSpacePoint point, bool left)
     {
         if (left)
@@ -140,7 +144,6 @@ public class KinectControls : MonoBehaviour
                     {
                         leftNewspaper.CreateNewspaper(-1);
                         animationScript.PlayAnimation("Throwing Left");
-                        //transform.Translate(-movement); // Implementeer hier krant naar links gooien, deze regel verplaats het object nu als test
                         previousLeftHandPositions.Clear();
                         previousTimesLeft.Clear();
                         break;
@@ -158,7 +161,6 @@ public class KinectControls : MonoBehaviour
                     {
                         rightNewspaper.CreateNewspaper(1);
                         animationScript.PlayAnimation("Throwing Right");
-                        //transform.Translate(movement); // Implementeer hier krant naar recht gooien, deze regel verplaats het object nu als test
                         previousRightHandPositions.Clear();
                         previousTimesRight.Clear();
                         break;
@@ -168,30 +170,44 @@ public class KinectControls : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Compares the lean value of the player.
+    /// </summary>
+    /// <param name="lean"></param>
     void CompareLean(Kinect.PointF lean)
     {
         if (lean.X > minCheckedLean)
         {
             movementScript.Turn(1);
             animationScript.PlayAnimation("Steering Right");
-            //transform.Translate(moveSideways); // Implementeer hier naar rechts sturen, deze regel verplaats het object nu als test
         }
         else if (lean.X < -minCheckedLean)
         {
             movementScript.Turn(-1);
             animationScript.PlayAnimation("Steering Left");
-            //transform.Translate(-moveSideways); // Implementeer hier naar links sturen, deze regel verplaats het object nu als test
         }
 
         if (lean.Y > minCheckedLean)
         {
             movementScript.Accelerate();
-            //transform.Translate(moveUpDown); // Implementeer hier versnellen, deze regel verplaats het object nu als test
         }
         else if (lean.Y < -minCheckedLean)
         {
             movementScript.Decelerate();
-            //transform.Translate(-moveUpDown); // Implementeer hier afremmen, deze regel verplaats het object nu als test
+        }
+    }
+
+    /// <summary>
+    /// Check if the arms are crossed by checking if the hands are on the opposite sites of each other.
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <param name="margin"></param>
+    void CompareHands(Kinect.CameraSpacePoint left, Kinect.CameraSpacePoint right, float margin)
+    {
+        if (left.X > right.X + margin)
+        {
+            escapeScript.LoadMainMenu();
         }
     }
 }
