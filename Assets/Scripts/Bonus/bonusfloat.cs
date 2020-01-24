@@ -11,7 +11,7 @@ public class bonusfloat : MonoBehaviour
     {
         startPosition = transform.position;
     }
-    // Update is called once per frame
+    
     void Update()
     {
         MoveVertical();
@@ -24,7 +24,7 @@ public class bonusfloat : MonoBehaviour
         {
             temp.y += 0.015f;
             transform.position = temp;
-            if (transform.position.y >= 2.30f)
+            if (transform.position.y >= startPosition.y + 0.6f)
             {
                 up = false;
             }
@@ -33,7 +33,7 @@ public class bonusfloat : MonoBehaviour
         {
             temp.y -= 0.015f;
             transform.position = temp;
-            if (transform.position.y <= 1.10f)
+            if (transform.position.y <= startPosition.y - 0.6f)
             {
                 up = true;
             }
