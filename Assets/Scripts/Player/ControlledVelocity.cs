@@ -39,7 +39,7 @@ public class ControlledVelocity : MonoBehaviour
     void Awake()
     {
         speed = 600;
-        minSpeed = 600;
+        minSpeed = 800;
         maxSpeed = 1500;
         acceleration = 150;
         initialTurnSpeed = 100;
@@ -143,7 +143,7 @@ public class ControlledVelocity : MonoBehaviour
     public void Decelerate()
     {
         if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
-        if (speed < 0) speed = minSpeed;
+        if (speed < minSpeed) speed = minSpeed;
     }
 
     /// <summary>
