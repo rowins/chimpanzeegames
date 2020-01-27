@@ -5,7 +5,7 @@ using Kinect = Windows.Kinect;
 
 public class MenuKinect : MonoBehaviour
 {
-    public menu menu;
+    public Menu menu;
     public GameObject Hand;
     public GameObject BodySourceManager;
     private BodySourceManager bodyManager;
@@ -17,6 +17,10 @@ public class MenuKinect : MonoBehaviour
 
     public float closedHandReset = 1f;
     private float closedHandTimer;
+
+    private bool pressedButton = false;
+    public float pressedReset = 1f;
+    private float pressedTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -88,15 +92,14 @@ public class MenuKinect : MonoBehaviour
             sprite.color = new Color(0, 1, 0);
             closedHandTimer = closedHandReset;
 
-            if (InYRange(position.y, playButtonTop, playButtonBottom))
+            if (!pressedButton) // Since we're checking the hand's position every frame and a player can't physically close their hand for just one, we need some protection against pressing a button and immediately pressing another that is right beneath it.
             {
-                sprite.color = new Color(0, 0, 1);
-                menu.PlayGame();
-            }
-            else if (InYRange(position.y, exitButtonTop, exitButtonBottom))
-            {
-                sprite.color = new Color(1, 1, 0);
-                menu.ExitGame();
+                if (menu.PressAButton(position.y))
+                {
+                    pressedTimer = pressedReset;
+                    pressedButton = true;
+                    sprite.color = new Color(0, 0, 1);
+                }
             }
             
         }
@@ -109,7 +112,13 @@ public class MenuKinect : MonoBehaviour
                 sprite.color = new Color(1, 0, 0);
             }
         }
-        
+
+        pressedTimer -= Time.deltaTime;
+        if (pressedTimer < 0)
+        {
+            pressedTimer = pressedReset;
+            pressedButton = false;
+        }
     }
 
     public bool InYRange(float Y, float top, float bottom) // Unfortunately it seems the values for top and bottom have to be hardcoded and discovered by hand, which is problematic if one wants to add more buttons
