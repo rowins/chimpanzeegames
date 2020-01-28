@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HUDManager : MonoBehaviour
 {
     public int newspapers;
+    public int maximum = 10;
 
     public bool newsPaperCheck()
     {
@@ -26,9 +27,10 @@ public class HUDManager : MonoBehaviour
 
     public void addNewspapers(int x)
     {
-        if(newspapers + x <= 10)
+        newspapers += x;
+        if (newspapers > maximum)
         {
-            newspapers += x;
+            newspapers = maximum;
         }
     }
 }
