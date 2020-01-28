@@ -89,7 +89,14 @@ public class MenuKinect : MonoBehaviour
         if (handClosed)
         {
             //Indicate the hand was closed
-            sprite.color = new Color(0, 1, 0);
+            if (pressedButton)
+            {
+                sprite.color = new Color(0, 0, 1);
+            }
+            else
+            {
+                sprite.color = new Color(0, 1, 0);
+            }
             closedHandTimer = closedHandReset;
 
             if (!pressedButton) // Since we're checking the hand's position every frame and a player can't physically close their hand for just one, we need some protection against pressing a button and immediately pressing another that is right beneath it.
@@ -119,14 +126,5 @@ public class MenuKinect : MonoBehaviour
             pressedTimer = pressedReset;
             pressedButton = false;
         }
-    }
-
-    public bool InYRange(float Y, float top, float bottom) // Unfortunately it seems the values for top and bottom have to be hardcoded and discovered by hand, which is problematic if one wants to add more buttons
-    {
-        if ((Y < top) && (Y > bottom))
-        {
-            return true;
-        }
-        return false;
     }
 }
