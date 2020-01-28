@@ -31843,6 +31843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspapers: 10
+  maximum: 10
 --- !u!4 &723951277
 Transform:
   m_ObjectHideFlags: 0
@@ -50878,7 +50879,7 @@ MonoBehaviour:
   victory: {fileID: 1695489971}
   playAgain: {fileID: 1758095425}
   finished: 0
-  space: 0
+  space: 32
 --- !u!33 &1194804516
 MeshFilter:
   m_ObjectHideFlags: 0
