@@ -50841,13 +50841,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194804511}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -103.09, y: -66.603, z: -294.34}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalRotation: {x: -0, y: 0.76904684, z: -0, w: 0.63919246}
+  m_LocalPosition: {x: -98.92, y: -66.603, z: -294.49}
+  m_LocalScale: {x: 33.888447, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 1346757581}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 100.537, z: 0}
 --- !u!65 &1194804513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50876,7 +50876,7 @@ MonoBehaviour:
   timer: 0
   player: {fileID: 1839983364}
   victory: {fileID: 1695489971}
-  playAgain: {fileID: 0}
+  playAgain: {fileID: 1758095425}
   finished: 0
   space: 0
 --- !u!33 &1194804516
