@@ -34,7 +34,6 @@ public class ControlledVelocity : MonoBehaviour
     public float velX, velZ;
     float initialTurnSpeed;
     public Text textDBG;
-    public bool inGate;
 
     void Awake()
     {
@@ -42,8 +41,7 @@ public class ControlledVelocity : MonoBehaviour
         minSpeed = 800;
         maxSpeed = 1500;
         acceleration = 150;
-        initialTurnSpeed = 50;
-        inGate = false;
+        initialTurnSpeed = 100;
     }
 
     void FixedUpdate()
@@ -87,37 +85,6 @@ public class ControlledVelocity : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Gate") == true) // De speler tussen verschillende delen van de weg kunnen laten rijden
-        {
-            if (inGate == false)
-            {
-                inGate = true;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Zorgen dat de speler niet van de weg af kan rijden
-    /// </summary>
-    /// <param name="other"></param>
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Gate") == true)
-        {
-            if (inGate == true)
-            {
-                inGate = false;
-            }
-
-        }
-        if (other.CompareTag("bound") == true && !inGate)
-        {
-            speed = 0;
-        }
-    }
-    
     /// <summary>
     /// De speler onder de goede hoek laten fietsen.
     /// </summary>
@@ -153,5 +120,12 @@ public class ControlledVelocity : MonoBehaviour
     public void Turn(int direction)
     {
         gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0) * direction;
+    }
+
+    public void Finish()
+    {
+        maxSpeed = 3500;
+        speed = 3500;
+        acceleration = 3500;
     }
 }

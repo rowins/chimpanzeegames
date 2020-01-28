@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class ScoreUpdater : MonoBehaviour
- {
+{
     public TextMeshProUGUI Score;
     public int currentScore;
 
@@ -26,5 +26,9 @@ public class ScoreUpdater : MonoBehaviour
     {
         currentScore += x;
     }
- }
 
+    public int returnScore()
+    {
+        return currentScore;
+    }
+}

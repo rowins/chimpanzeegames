@@ -6,15 +6,27 @@ public class Score : MonoBehaviour
 {
     public int score;
     public int abonnees;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public double gameTime = 0;
+    public double minutes;
+    public double seconds;
+    public bool finished = false;
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(abonnees);
+        if (!finished)
+        {
+            score = FindObjectOfType<ScoreUpdater>().returnScore();
+            gameTime += Time.deltaTime;
+            minutes = gameTime / 60;
+            seconds = gameTime % 60;
+            Debug.Log(gameTime + "   minutes " + minutes + "   seconds: " + seconds);
+        }
+
+    }
+
+    public void Finish()
+    {
+        finished = true;
     }
 }
