@@ -18,13 +18,24 @@ public class KinectControls : MonoBehaviour
     public double minDistance = 0.4;
     public float minCheckedLean = 0.2f;
     public float crossedArmsMargin = 0.25f;
+    public float grace = 3;
     // Scripts to call functions in
     public ThrowNewspaper leftNewspaper;
     public ThrowNewspaper rightNewspaper;
     public ControlledVelocity movementScript;
     public PlayerAnimator animationScript;
     public Escape escapeScript;
+    public CollisionFinish finishScript;
 
+    private float finishedTimer;
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("FinishedTimer"))
+        {
+            finishedTimer = PlayerPrefs.GetFloat("FinishedTimer");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -90,6 +101,16 @@ public class KinectControls : MonoBehaviour
         #endregion
         
         CompareLean(lean);
+
+        if (finishedTimer > 0)
+        {
+            finishedTimer -= Time.deltaTime;
+            if (finishedTimer < 0)
+            {
+                finishedTimer = 0;
+                PlayerPrefs.SetFloat("FinishedTimer", 0);
+            }
+        }
 
         CompareHands(leftHandPosition, rightHandPosition, crossedArmsMargin);
     }
@@ -213,7 +234,18 @@ public class KinectControls : MonoBehaviour
     {
         if (left.X > right.X + margin)
         {
-            escapeScript.LoadMainMenu();
+            if (finishScript.finished)
+            {
+                PlayerPrefs.SetFloat("FinishedTimer", grace); // Since we'll be checking against this value when the scene has reloaded, this will be a grace period in which your arms may still be crossed but you will not go to the menu, which would defeat the point of playing again.
+                finishScript.RestartLevel();
+            }
+            else
+            {
+                if (finishedTimer == 0)
+                {
+                    escapeScript.LoadMainMenu();
+                }
+            }
         }
     }
 }

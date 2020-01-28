@@ -21,19 +21,29 @@ public class CollisionFinish : MonoBehaviour
         {
             if (Input.GetKeyDown(space))
             {
-                Time.timeScale = 1;
-                SceneManager.LoadScene("Level_1");
+                RestartLevel();
             }
         }
     }
 
     void OnTriggerEnter(Collider otherObj)
-            {
-                FindObjectOfType<Score>().Finish();
-                player.GetComponent<ControlledVelocity>().Finish();
-                victory.GetComponent<VictoryScript>().Display("Victory");
-                playAgain.GetComponent<VictoryScript>().Display("Press space to play again!");
-                finished = true;
-                Time.timeScale = 0;
-            }
-        }
+    {
+        FreezeLevel();
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level_1");
+    }
+
+    void FreezeLevel()
+    {
+        FindObjectOfType<Score>().Finish();
+        player.GetComponent<ControlledVelocity>().Finish();
+        victory.GetComponent<VictoryScript>().Display("Victory");
+        playAgain.GetComponent<VictoryScript>().Display("Press space or cross your arms to play again!");
+        finished = true;
+        Time.timeScale = 0;
+    }
+}
