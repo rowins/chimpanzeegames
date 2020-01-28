@@ -21,6 +21,7 @@ public class CollisionFinish : MonoBehaviour
         {
             if (Input.GetKeyDown(space))
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene("Level_1");
             }
         }
