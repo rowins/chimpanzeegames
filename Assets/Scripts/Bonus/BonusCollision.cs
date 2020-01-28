@@ -28,7 +28,7 @@ public class BonusCollision : MonoBehaviour
             else if (name == "Paper")
             {
                 FindObjectOfType<BonusSound>().playSound(1);
-                FindObjectOfType<HUDManager>().addNewspapers(1);
+                FindObjectOfType<HUDManager>().addNewspapers(2);
             }
             Destroy(gameObject);
         }

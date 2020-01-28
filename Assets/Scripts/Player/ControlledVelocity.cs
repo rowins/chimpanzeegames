@@ -35,6 +35,8 @@ public class ControlledVelocity : MonoBehaviour
     float initialTurnSpeed;
     public Text textDBG;
 
+    public bool finished = false;
+
     void Awake()
     {
         speed = 600;
@@ -50,34 +52,36 @@ public class ControlledVelocity : MonoBehaviour
         turnSpeed = initialTurnSpeed + (speed * 0.01f);
 
         // Input van de toetsen registeren en acties erop uitvoeren..
-
-        if (Input.GetKey(keyForward))
+        if (!finished)
         {
-            Accelerate();
-            //if (speed <= maxSpeed) speed += acceleration * Time.deltaTime; // De velocity steeds verhogen
-        }
+            if (Input.GetKey(keyForward))
+            {
+                Accelerate();
+                //if (speed <= maxSpeed) speed += acceleration * Time.deltaTime; // De velocity steeds verhogen
+            }
 
-        if (Input.GetKey(keyBackward))
-        {
-            Decelerate();
-            //if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
-        }
+            if (Input.GetKey(keyBackward))
+            {
+                Decelerate();
+                //if (speed >= 0) speed -= acceleration * 3 * Time.deltaTime;
+            }
 
-        //if (speed < 0) speed = 0;
-        //if (speed > maxSpeed) speed = maxSpeed;
+            //if (speed < 0) speed = 0;
+            //if (speed > maxSpeed) speed = maxSpeed;
 
-        // Hieronder de speler roteren
+            // Hieronder de speler roteren
 
-        if (Input.GetKey(keyLeft))
-        {
-            Turn(-1);
-            //gameObject.transform.eulerAngles -= new Vector3(0, turnSpeed * Time.deltaTime, 0);
-        }
+            if (Input.GetKey(keyLeft))
+            {
+                Turn(-1);
+                //gameObject.transform.eulerAngles -= new Vector3(0, turnSpeed * Time.deltaTime, 0);
+            }
 
-        if (Input.GetKey(keyRight))
-        {
-            Turn(1);
-            //gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
+            if (Input.GetKey(keyRight))
+            {
+                Turn(1);
+                //gameObject.transform.eulerAngles += new Vector3(0, turnSpeed * Time.deltaTime, 0);
+            }
         }
 
         GetComponent<Rigidbody>().velocity = new Vector3(velX * speed, GetComponent<Rigidbody>().velocity.y - 5, velZ * speed);
@@ -124,8 +128,6 @@ public class ControlledVelocity : MonoBehaviour
 
     public void Finish()
     {
-        maxSpeed = 3500;
-        speed = 3500;
-        acceleration = 3500;
+        finished = true;
     }
 }

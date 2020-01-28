@@ -7,28 +7,32 @@ public class CollisionFinish : MonoBehaviour
 {
 
     public double timer;
-    public bool finished = false;
     public GameObject player;
+    public GameObject victory;
+    public GameObject playAgain;
+    public bool finished = false;
+
+    [SerializeField]
+    KeyCode space;
 
     void Update()
     {
         if (finished)
         {
-            timer += Time.deltaTime;
-        }
-
-        if (timer > 5)
-        {
-            player.GetComponent<ControlledVelocity>().Finish();
-            Debug.Log("FINISH");
-            SceneManager.LoadScene("Level_1");
+            if (Input.GetKeyDown(space))
+            {
+                SceneManager.LoadScene("Level_1");
+            }
         }
     }
 
-    // Als de speler door de finish rijdt, wordt het volgende level geladen. 
     void OnTriggerEnter(Collider otherObj)
-    {
-        FindObjectOfType<Score>().Finish();
-        finished = true;
-    }
-}
+            {
+                FindObjectOfType<Score>().Finish();
+                player.GetComponent<ControlledVelocity>().Finish();
+                victory.GetComponent<VictoryScript>().Display("Victory");
+                playAgain.GetComponent<VictoryScript>().Display("Press space to play again!");
+                finished = true;
+                Time.timeScale = 0;
+            }
+        }

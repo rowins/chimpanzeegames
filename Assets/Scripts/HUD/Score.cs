@@ -20,7 +20,6 @@ public class Score : MonoBehaviour
             gameTime += Time.deltaTime;
             minutes = gameTime / 60;
             seconds = gameTime % 60;
-            Debug.Log(gameTime + "   minutes " + minutes + "   seconds: " + seconds);
         }
 
     }
