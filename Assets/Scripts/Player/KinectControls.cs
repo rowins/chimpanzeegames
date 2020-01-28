@@ -178,13 +178,19 @@ public class KinectControls : MonoBehaviour
     {
         if (lean.X > minCheckedLean)
         {
+            animationScript.anim = false;
             movementScript.Turn(1);
             animationScript.PlayAnimation("Steering Right");
         }
         else if (lean.X < -minCheckedLean)
         {
+            animationScript.anim = false;
             movementScript.Turn(-1);
             animationScript.PlayAnimation("Steering Left");
+        }
+        else
+        {
+            animationScript.anim = true;
         }
 
         if (lean.Y > minCheckedLean)

@@ -14,7 +14,7 @@ public class Gegevens : MonoBehaviour
     {
         isAbonnee = false;
         int IsAbb = Random.Range(1, 4);
-        if (IsAbb == 1)
+        if (IsAbb == 1 || IsAbb == 2)
         {
             isAbonnee = true;
         }
