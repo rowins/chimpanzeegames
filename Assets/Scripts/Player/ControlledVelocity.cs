@@ -43,7 +43,7 @@ public class ControlledVelocity : MonoBehaviour
         minSpeed = 800;
         maxSpeed = 1500;
         acceleration = 150;
-        initialTurnSpeed = 100;
+        initialTurnSpeed = 60;
     }
 
     void FixedUpdate()

@@ -28,15 +28,14 @@ public class ThrowNewspaper : MonoBehaviour
         // Krant laten gooien
         if (Input.GetKeyUp(key))
         {
-            if (FindObjectOfType<HUDManager>().newsPaperCheck())
-            {
+          
                 CreateNewspaper(richting);
                 //CreateNewspaper(-1);
                 /* FindObjectOfType<HUDManager>().thrown();
                 newspaper.GetComponent<Variables>().richting = -1;
                 CalculateVelocity();
                 Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y + 1.6F, transform.position.z), Quaternion.identity); */
-            }
+            
         }
     }
 
@@ -46,10 +45,13 @@ public class ThrowNewspaper : MonoBehaviour
     /// <param name="richting">-1 is to the left, 1 is to the right</param>
     public void CreateNewspaper(int richting)
     {
-        FindObjectOfType<HUDManager>().thrown();
-        newspaper.GetComponent<Variables>().richting = richting;
-        CalculateVelocity();
-        Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y , transform.position.z), Quaternion.identity);
+        if (FindObjectOfType<HUDManager>().newsPaperCheck())
+        {
+            FindObjectOfType<HUDManager>().thrown();
+            newspaper.GetComponent<Variables>().richting = richting;
+            CalculateVelocity();
+            Instantiate(newspaper, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
     }
 
     void CalculateVelocity()

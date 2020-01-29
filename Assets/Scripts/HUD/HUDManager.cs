@@ -22,7 +22,7 @@ public class HUDManager : MonoBehaviour
 
     public void thrown()
     {
-        newspapers--;
+        newspapers--; 
     }
 
     public void addNewspapers(int x)
