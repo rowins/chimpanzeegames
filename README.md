@@ -10,7 +10,7 @@
 
 ## Special Requirements
 Paperboy 2020 is supposed to be played with a Kinect. The Kinect doesn't have to be attached before starting the game, and can be connected at any point
-during the game. It is advised to stand approximately one meter away from the Kinect, and to make sure nothing is moving behind the player, so the Kinect
+during the game. It is advised to stand approximately two meters away from the Kinect, and to make sure nothing is moving behind the player, so the Kinect
 doesn't inadvertently register those movements. It is not required to play the game with a Kinect, since it also contains keyboard controls.
 
 
